@@ -29,7 +29,7 @@ const TilesContainer = (props) => {
 
 
   return (
-    <div>
+    <div className="ui grid">
       {sortedHogs.map(hog => <Tile hog={hog} key={++counter} />)}
     </div>
   )

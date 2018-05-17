@@ -25,33 +25,35 @@ class Tile extends React.Component {
 
     const weight = 'weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water'
     const medal = 'highest medal achieved'
-    
+
     return (
-      <div onClick={this.handleClick} className='ui card'>
-        <div className="image">
-          <img src= {currImage}/>
-        </div>
-        <div className="content">
-          <a className="header">{this.props.hog.name}</a>
+      <div className='four wide column'>
+        <div onClick={this.handleClick} className='ui card'>
+          <div className="image">
+            <img src= {currImage}/>
+          </div>
+          <div className="content">
+            <a className="header">{this.props.hog.name}</a>
 
-          {
-            this.state.details ?
-            <div className="description">
-              <div>
-                Weight: {this.props.hog[weight]}
+            {
+              this.state.details ?
+              <div className="description">
+                <div>
+                  Weight: {this.props.hog[weight]}
+                </div>
+                <div>
+                  Highest Medal Achieved: {this.props.hog[medal]}
+                </div>
+                <div>
+                  Greased: {this.props.hog.greased? 'yes' : 'no'}
+                </div>
               </div>
-              <div>
-                Highest Medal Achieved: {this.props.hog[medal]}
-              </div>
-              <div>
-                Greased: {this.props.hog.greased? 'yes' : 'no'}
-              </div>
-            </div>
-            :
-            null
-          }
-        </div>
+              :
+              null
+            }
+          </div>
 
+        </div>
       </div>
     )
   }
